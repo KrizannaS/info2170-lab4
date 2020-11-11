@@ -10,15 +10,17 @@ $(document).ready(function () {
 
 
 function Search(){
- 
+ var searching=document.getElementById("myInput");
+ var input = searching.value;
+ searching.value="";
+
 $.ajax({
   type: "POST",
-  url: "http://localhost/info2180-lab4/superheroes.php",
-  dataType:"html",
-  data: dataString,
+  url: "http://localhost/info2180-lab4/superheroes.php?query=" + input ,
   success: function(data) {
-    alert(data);
+    $("#result").html(data)
     }
-});
+  });
+
 
 }

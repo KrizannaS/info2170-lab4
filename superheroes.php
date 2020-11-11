@@ -64,11 +64,67 @@ $superheroes = [
   ], 
 ];
 
+  // Get the parameter from URL
+
+
+  $a=filter_var($_GET['query'],FILTER_SANITIZE_STRING);         
+ 
+  $output="";
+
+        
+
+
+
+  if($a !==""){
+
+
+
+    foreach($superheroes as $superhero)
+      {
+      if(in_array($a,$superhero)){
+    
+           if($output===""){
+
+           $output=$superhero['alias'];
+           $outputName=$superhero['name'];
+           $outputBio=$superhero['biography'];
+
+           echo "<h3>$output</h3>";
+           echo "<h4>$outputName</h4>";
+           echo "<p>$outputBio</p>";
+
+       }
+
+
+      else 
+      {
+
+        $output.=",$output";
+      }
+      }
+      }  
+
+     
+  
+     echo $output==""? "SUPERHERO NOT FOUND": is_null($output);
+
+      
+
+    }
+
+   
+  
+
+
+
+  
 ?>
 
 
+
 <ul>
-<?php foreach ($superheroes as $superhero): ?>
+<?php foreach ($superheroes as $superhero):?>
+
 
   <li><?= $superhero['alias']; ?></li>
   
