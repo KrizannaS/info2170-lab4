@@ -106,6 +106,7 @@ $superheroes = [
 
      
   
+     
      echo $output==""? "SUPERHERO NOT FOUND": is_null($output);
 
       
@@ -113,8 +114,8 @@ $superheroes = [
     }
 
    
-  
-
+   
+ 
 
 
   
@@ -130,3 +131,5 @@ $superheroes = [
   
 <?php endforeach; ?>
 </ul>
+
+

@@ -3,7 +3,10 @@ $(document).ready(function () {
    $('#btn').click(function(e){
         e.preventDefault();
         e.stopPropagation();
+
+
         Search();
+
    });
 });
 
@@ -18,9 +21,15 @@ $.ajax({
   type: "POST",
   url: "http://localhost/info2180-lab4/superheroes.php?query=" + input ,
   success: function(data) {
-    $("#result").html(data)
+    $("#result").html(data);
+   
+    
     }
+
+
   });
+
+
 
 
 }
